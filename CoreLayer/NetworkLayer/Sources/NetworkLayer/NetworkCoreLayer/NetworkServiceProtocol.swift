@@ -8,8 +8,8 @@
 import Foundation
 
 public protocol NetworkServiceProtocol: Sendable {
-
-    func request(
-        _ request: APIRequest
-    ) async throws -> Data
+  
+  func request(
+    _ request: APIRequest
+  ) async throws -> Data
 }
