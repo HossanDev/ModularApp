@@ -1,0 +1,97 @@
+
+name: iOS CI
+
+on:
+  # Run CI whenever code is pushed to any branch.
+  push:
+    branches:
+      - "**"
+
+  # Run CI for pull requests targeting any branch.
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-test:
+    name: Build and Test
+    runs-on: macos-26
+
+    steps:
+      # 1. Download the repository.
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Select a consistent Xcode version.
+      - name: Select Xcode
+        run: |
+          sudo xcode-select -s /Applications/Xcode_26.0.app
+          xcodebuild -version
+
+      # 3. Resolve all SPM dependencies.
+      - name: Resolve Swift Packages
+        run: |
+          xcodebuild \
+            -resolvePackageDependencies \
+            -workspace MyDemoApp.xcworkspace \
+            -scheme InsuranceApp
+
+      # 4. Build the main application.
+      - name: Build Insurance App
+        run: |
+          xcodebuild \
+            -workspace MyDemoApp.xcworkspace \
+            -scheme InsuranceApp \
+            -destination 'platform=iOS Simulator,name=iPhone 17 Pro' \
+            -configuration Debug \
+            clean build \
+            CODE_SIGNING_ALLOWED=NO
+
+      # 5. Run application unit tests and UI tests
+      # included in the InsuranceApp scheme.
+      - name: Test Insurance App
+        run: |
+          xcodebuild \
+            -workspace MyDemoApp.xcworkspace \
+            -scheme InsuranceApp \
+            -destination 'platform=iOS Simulator,name=iPhone 17 Pro' \
+            -configuration Debug \
+            -parallel-testing-enabled NO \
+            -enableCodeCoverage YES \
+            test \
+            CODE_SIGNING_ALLOWED=NO
+
+      # 6. Build and test NetworkLayer.
+      - name: Test NetworkLayer
+        run: |
+          xcodebuild \
+            -workspace MyDemoApp.xcworkspace \
+            -scheme NetworkLayer \
+            -destination 'platform=iOS Simulator,name=iPhone 17 Pro' \
+            -parallel-testing-enabled NO \
+            test \
+            CODE_SIGNING_ALLOWED=NO
+
+      # 7. Build and test SharedUI.
+      - name: Test SharedUI
+        run: |
+          xcodebuild \
+            -workspace MyDemoApp.xcworkspace \
+            -scheme SharedUI \
+            -destination 'platform=iOS Simulator,name=iPhone 17 Pro' \
+            -parallel-testing-enabled NO \
+            test \
+            CODE_SIGNING_ALLOWED=NO
+
+      # 8. Build and test AnalysisKith.
+      - name: Test AnalysisKith
+        run: |
+          xcodebuild \
+            -workspace MyDemoApp.xcworkspace \
+            -scheme AnalysisKith \
+            -destination 'platform=iOS Simulator,name=iPhone 17 Pro' \
+            -parallel-testing-enabled NO \
+            test \
+            CODE_SIGNING_ALLOWED=NO
+
