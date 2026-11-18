@@ -1,0 +1,89 @@
+
+version: 2.1
+
+jobs:
+  build-and-test:
+    macos:
+      xcode: 26.6.0
+    resource_class: m4pro.medium
+
+    steps:
+      - checkout
+
+      - run:
+          name: Check Xcode version
+          command: xcodebuild -version
+
+      - run:
+          name: List available simulators
+          command: xcrun simctl list devices available
+
+      - run:
+          name: Resolve Swift packages
+          command: |
+            xcodebuild \
+              -resolvePackageDependencies \
+              -workspace MyDemoApp.xcworkspace \
+              -scheme InsuranceApp
+
+      - run:
+          name: Build InsuranceApp
+          command: |
+            xcodebuild \
+              -workspace MyDemoApp.xcworkspace \
+              -scheme InsuranceApp \
+              -destination 'generic/platform=iOS Simulator' \
+              -configuration Debug \
+              clean build \
+              CODE_SIGNING_ALLOWED=NO
+
+      - run:
+          name: Run InsuranceApp tests
+          command: |
+            xcodebuild \
+              -workspace MyDemoApp.xcworkspace \
+              -scheme InsuranceApp \
+              -destination 'platform=iOS Simulator,name=iPhone 17 Pro' \
+              -parallel-testing-enabled NO \
+              -enableCodeCoverage YES \
+              test \
+              CODE_SIGNING_ALLOWED=NO
+
+      - run:
+          name: Test NetworkLayer
+          command: |
+            xcodebuild \
+              -workspace MyDemoApp.xcworkspace \
+              -scheme NetworkLayer \
+              -destination 'generic/platform=iOS Simulator' \
+              build \
+              CODE_SIGNING_ALLOWED=NO
+
+      - run:
+          name: Test SharedUI
+          command: |
+            xcodebuild \
+              -workspace MyDemoApp.xcworkspace \
+              -scheme SharedUI \
+              -destination 'generic/platform=iOS Simulator' \
+              build \
+              CODE_SIGNING_ALLOWED=NO
+
+      - run:
+          name: Test AnalysisKith
+          command: |
+            xcodebuild \
+              -workspace MyDemoApp.xcworkspace \
+              -scheme AnalysisKith \
+              -destination 'generic/platform=iOS Simulator' \
+              build \
+              CODE_SIGNING_ALLOWED=NO
+
+      - store_artifacts:
+          path: ~/Library/Logs/DiagnosticReports
+          destination: simulator-crash-reports
+
+workflows:
+  ios-ci:
+    jobs:
+      - build-and-test
