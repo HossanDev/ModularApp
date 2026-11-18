@@ -8,9 +8,13 @@
       location = "group:SharedUI">
    </FileRef>
    <FileRef
-      location = "group:NetworkLayer">
-   </FileRef>
-   <FileRef
       location = "group:AnalysisKith">
    </FileRef>
+   <Group
+      location = "group:CoreLayer"
+      name = "CoreLayer">
+      <FileRef
+         location = "group:NetworkLayer">
+      </FileRef>
+   </Group>
 </Workspace>
