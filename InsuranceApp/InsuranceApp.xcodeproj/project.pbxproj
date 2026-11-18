@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		8C4205C530AE3D5D0091901B /* NetworkLayer in Frameworks */ = {isa = PBXBuildFile; productRef = 8C4205C430AE3D5D0091901B /* NetworkLayer */; settings = {ATTRIBUTES = (Required, ); }; };
+		8C4205E230AE3E5B0091901B /* NetworkLayer in Frameworks */ = {isa = PBXBuildFile; productRef = 8C4205E130AE3E5B0091901B /* NetworkLayer */; };
+		8C4205E430AE3E5F0091901B /* SharedUI in Frameworks */ = {isa = PBXBuildFile; productRef = 8C4205E330AE3E5F0091901B /* SharedUI */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		8C42059830AE3A710091901B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -52,6 +58,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C4205E230AE3E5B0091901B /* NetworkLayer in Frameworks */,
+				8C4205E430AE3E5F0091901B /* SharedUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C4205C530AE3D5D0091901B /* NetworkLayer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +87,7 @@
 				8C42058C30AE3A6E0091901B /* InsuranceApp */,
 				8C42059A30AE3A710091901B /* InsuranceAppTests */,
 				8C4205A430AE3A710091901B /* InsuranceAppUITests */,
+				8C4205C330AE3D5D0091901B /* Frameworks */,
 				8C42058B30AE3A6E0091901B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +100,13 @@
 				8C4205A130AE3A710091901B /* InsuranceAppUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		8C4205C330AE3D5D0091901B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -112,6 +129,8 @@
 			);
 			name = InsuranceApp;
 			packageProductDependencies = (
+				8C4205E130AE3E5B0091901B /* NetworkLayer */,
+				8C4205E330AE3E5F0091901B /* SharedUI */,
 			);
 			productName = InsuranceApp;
 			productReference = 8C42058A30AE3A6E0091901B /* InsuranceApp.app */;
@@ -158,6 +177,7 @@
 			);
 			name = InsuranceAppUITests;
 			packageProductDependencies = (
+				8C4205C430AE3D5D0091901B /* NetworkLayer */,
 			);
 			productName = InsuranceAppUITests;
 			productReference = 8C4205A130AE3A710091901B /* InsuranceAppUITests.xctest */;
@@ -330,6 +350,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
 			};
 			name = Debug;
 		};
@@ -386,6 +407,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 6.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -417,7 +439,7 @@
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -449,7 +471,7 @@
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -578,6 +600,21 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8C4205C430AE3D5D0091901B /* NetworkLayer */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NetworkLayer;
+		};
+		8C4205E130AE3E5B0091901B /* NetworkLayer */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NetworkLayer;
+		};
+		8C4205E330AE3E5F0091901B /* SharedUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SharedUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8C42058230AE3A6E0091901B /* Project object */;
 }

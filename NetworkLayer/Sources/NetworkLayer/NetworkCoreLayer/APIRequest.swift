@@ -1,0 +1,29 @@
+// The Swift Programming Language
+// https://docs.swift.org/swift-book
+
+
+
+import Foundation
+
+public struct APIRequest: Sendable {
+
+    public let path: String
+    public let method: HTTPMethod
+    public let headers: [String: String]
+    public let queryParameters: [String: String]
+    public let body: Data?
+
+    public init(
+        path: String,
+        method: HTTPMethod = .get,
+        headers: [String: String] = [:],
+        queryParameters: [String: String] = [:],
+        body: Data? = nil
+    ) {
+        self.path = path
+        self.method = method
+        self.headers = headers
+        self.queryParameters = queryParameters
+        self.body = body
+    }
+}
