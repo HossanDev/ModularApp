@@ -10,6 +10,7 @@
 		8C4205C530AE3D5D0091901B /* NetworkLayer in Frameworks */ = {isa = PBXBuildFile; productRef = 8C4205C430AE3D5D0091901B /* NetworkLayer */; settings = {ATTRIBUTES = (Required, ); }; };
 		8C4205E230AE3E5B0091901B /* NetworkLayer in Frameworks */ = {isa = PBXBuildFile; productRef = 8C4205E130AE3E5B0091901B /* NetworkLayer */; };
 		8C4205E430AE3E5F0091901B /* SharedUI in Frameworks */ = {isa = PBXBuildFile; productRef = 8C4205E330AE3E5F0091901B /* SharedUI */; };
+		8C4205E630AE410F0091901B /* TestPlan.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 8C4205E530AE410F0091901B /* TestPlan.xctestplan */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +34,7 @@
 		8C42058A30AE3A6E0091901B /* InsuranceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InsuranceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C42059730AE3A710091901B /* InsuranceAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InsuranceAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C4205A130AE3A710091901B /* InsuranceAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InsuranceAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C4205E530AE410F0091901B /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPlan.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -84,6 +86,7 @@
 		8C42058130AE3A6E0091901B = {
 			isa = PBXGroup;
 			children = (
+				8C4205E530AE410F0091901B /* TestPlan.xctestplan */,
 				8C42058C30AE3A6E0091901B /* InsuranceApp */,
 				8C42059A30AE3A710091901B /* InsuranceAppTests */,
 				8C4205A430AE3A710091901B /* InsuranceAppUITests */,
@@ -232,6 +235,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C4205E630AE410F0091901B /* TestPlan.xctestplan in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

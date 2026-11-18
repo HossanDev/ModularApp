@@ -10,4 +10,7 @@
    <FileRef
       location = "group:NetworkLayer">
    </FileRef>
+   <FileRef
+      location = "group:AnalysisKith">
+   </FileRef>
 </Workspace>

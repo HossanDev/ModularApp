@@ -39,6 +39,6 @@ public struct MockUserRepository: UserRepositoryProtocol {
   )
   
   public func fetchUsers() async throws -> [APIUser] {
-    [mockUser, mockSarahUser, mockBrownUser, mockUser]
+   return  [mockUser, mockSarahUser, mockBrownUser, mockUser]
   }
 }

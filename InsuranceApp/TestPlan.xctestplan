@@ -1,0 +1,52 @@
+{
+  "configurations" : [
+    {
+      "id" : "5E431BEC-21AA-409F-BCD4-C43EED301645",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:InsuranceApp.xcodeproj",
+        "identifier" : "8C42059630AE3A710091901B",
+        "name" : "InsuranceAppTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..\/NetworkLayer",
+        "identifier" : "NetworkLayerTests",
+        "name" : "NetworkLayerTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..\/SharedUI",
+        "identifier" : "SharedUITests",
+        "name" : "SharedUITests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:InsuranceApp.xcodeproj",
+        "identifier" : "8C4205A030AE3A710091901B",
+        "name" : "InsuranceAppUITests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..\/AnalysisKith",
+        "identifier" : "AnalysisKithTests",
+        "name" : "AnalysisKithTests"
+      }
+    }
+  ],
+  "version" : 1
+}
