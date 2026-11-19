@@ -8,12 +8,12 @@
 import SwiftUI
 
 public struct DKDivider: View {
-
-    public init() {}
-
-    public var body: some View {
-        Rectangle()
-            .fill(.gray.opacity(0.3))
-            .frame(height: 1)
-    }
+  
+  public init() {}
+  
+  public var body: some View {
+    Rectangle()
+      .fill(.gray.opacity(0.3))
+      .frame(height: 1)
+  }
 }
